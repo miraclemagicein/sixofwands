@@ -2,7 +2,7 @@ export const config = {
   runtime: "edge",
 };
 
-const TARGET = "https://mytunnel.workers.dev";
+const TARGET = "https://sixofwands.pages.dev";
 
 export default async function handler(req) {
   const url = new URL(req.url);
