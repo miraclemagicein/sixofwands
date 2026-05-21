@@ -5,13 +5,12 @@ const TARGET = "https://sixofwands.pages.dev";
 export default async function handler(req) {
   const url = new URL(req.url);
 
-  const target = TARGET + url.pathname + url.search;
+  const targetUrl = TARGET + url.pathname + url.search;
 
-  const newRequest = new Request(target, {
+  return fetch(targetUrl, {
     method: req.method,
     headers: req.headers,
-    body: req.body
+    body: req.body,
+    redirect: "manual"
   });
-
-  return fetch(newRequest);
 }
